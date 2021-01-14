@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components/macro'
+import TodoList from './components/TodoList/TodoList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Component = styled.div`
 
-export default App;
+display : flex;
+background-color : #fafafa;
+min-height : 100vh;
+flex-direction : column;
+justify-content : flex-start;
+align-items : center;
+padding : 1rem;
+
+`
+const Wrapper = styled.div`
+
+display : flex;
+width : 100%;
+max-width : 800px;
+flex-direction : column;
+align-items : center;
+
+`
+const Header = styled.div`
+
+font-weight : 400;
+text-transform : uppercase;
+font-size : 2.5rem;
+
+`
+
+const App = () => (
+
+    <Component>
+        <Wrapper>
+            <Header>Todo List </Header>
+            <TodoList/>
+        </Wrapper>
+    </Component>
+)
+
+export default App
